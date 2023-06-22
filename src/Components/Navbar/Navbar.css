@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
+.navbar {
+    display: inline-flex;
+    vertical-align: middle;
+    /*background-color:lightgreen;*/
+    padding-top: 8px;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rnav {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* background-color: blue; */
+    list-style-type: none;
+    gap: 1rem;
+  }
+
+  .logo {
+    height:200%;
+    align-self: center;
+  }

@@ -1,0 +1,83 @@
+
+  .sideB {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blue; */
+    width: 25.6%;
+    height: 100%;
+    padding-top: 1%;
+    gap:5%;
+  }
+  .sidebIn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+    padding-bottom: 12%;
+ 
+  }
+
+  .sideLow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    height: 5%;
+    gap: 5%;
+    width: 100%;
+  }
+  
+  .sideListy {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+    list-style-type: none;
+    gap: 12px;
+    /* background-color: black ; */
+  }
+  
+  .sideListx {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #609260;
+    padding-left: 12px;
+    gap: 1rem;
+
+  }
+  
+  h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 12px;
+  }
+  .line {
+    width: 2px;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    background-color: #F2F2F2;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .sideB {
+      display: none;
+      padding-right: 2px;
+      justify-content: space-between;
+      /*background-color: blue;*/
+      width: fit-content;
+      height: 100vh;
+    }
+  }
