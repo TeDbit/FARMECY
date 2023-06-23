@@ -19,7 +19,7 @@ export class Main extends Component{
                    <div className="container">
                        <div className="upperc">
                            <div className="messagefield">
-                               <textarea id="freeform" name="Message">Enter Message*</textarea>
+                               <textarea id="freeform" name="Message" placeholder="Enter Message*"></textarea>
                                <input type="text" placeholder="Enter Subject Line*"/>
                                <input type="text" placeholder="Enter Sender Name"/>
                            </div>

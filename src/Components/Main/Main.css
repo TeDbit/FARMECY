@@ -104,7 +104,7 @@ input::placeholder {
   .upperc {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 50%;
     padding-top: 20px;
     padding-bottom: 20px;
     /* background-color: #555; */
@@ -229,6 +229,14 @@ input::placeholder {
 
 
   @media only screen and (max-width: 900px) {
+
+    .main {
+      padding: 3% 0% 0% 0%;
+      width: 100%;
+      height:100%;
+  
+      /* background-color:greenyellow; */
+    }
   
     .log-container {
       display: none;
@@ -243,6 +251,35 @@ input::placeholder {
       height: 100%;
     }
 
+    .dragdrop-container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0px 20px 0px;
+      width: 100%;
+      height: 100%;
+      gap: 1rem;
+    }
+
+    .textH {
+      margin: 0px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 38px;
+      color: #101828;
+    }
+
+    .textH2 {
+      margin: 0px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 44px;
+      text-align: center;
+      letter-spacing: -0.02em;
+  
+  
+    }
 
     @media only screen and (max-width: 600px) {
       .upperc {
