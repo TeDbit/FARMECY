@@ -2,16 +2,19 @@
 
 
 .navbar {
-    display: inline-flex;
+    position:sticky;
+    top:0;
+    display:flex;
+    flex-shrink: 0;
     vertical-align: middle;
-    /* background-color:lightgreen; */
+    background-color:#FFFFFF;
     padding-top: 8px;
     width: 100%;
     height: 72px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     object-fit: cover;
+    z-index: 1;
   }
 
   .rnav {
