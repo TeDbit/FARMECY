@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+html,body{min-height: 100vh;}
 * {
   box-sizing: border-box;
+  /* overflow: hidden; */
 }
 
 body > * {
@@ -10,6 +12,9 @@ body > * {
   
 }
 
+.icon:hover{
+  color: aquamarine;
+}
 button {
   display: flex;
   flex-direction: row;
@@ -31,11 +36,13 @@ button {
   /* box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); */
 }
 .allBody {
-  min-height: 100vh;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
   /* position:-ms-page; */
   /* background-color: #282c34; */
-  padding-right: 2.5%;
-  padding-left: 1%;
+  /* padding-right: 2.5%;
+  padding-left: 1%; */
 
 }
 
@@ -43,10 +50,14 @@ button {
 .center {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
+  padding-left: 1%;
+  padding-right: 2.5%;
   /* background-color: #667085; */
-  width: 100%;
-  height: 1200px;
+  
+  /* overflow: scroll; */
 }
+
 .fullheight {
   position: absolute;
   top: 0;
@@ -104,17 +115,27 @@ button {
   }
 
   body {
-    padding-left: 2%;
-    padding-right: 2%;
+    /* padding-left: 2%;
+    padding-right: 2%; */
   }
    
   .allBody {
     min-height: 120vh;
     /* position:-ms-page; */
     /* background-color: #282c34; */
-    padding-right: 2.5%;
-    padding-left: 1%;
+    /* padding-right: 2.5%;
+    padding-left: 1%; */
   
+  }
+
+  .center {
+    display: flex;
+    flex-direction: row;
+    padding-left: 3%;
+    padding-right: 4.5%;
+    /* background-color: #667085; */
+    width: 100%;
+    height: 1200px;
   }
 
   button {
@@ -144,9 +165,9 @@ button {
       min-height: 180vh;
       /* position:-ms-page; */
       /* background-color: #282c34; */
-      padding-right: 2.5%;
+      /* padding-right: 2.5%;
       padding-left: 1%;
-    
+     */
     }
 
     .center {

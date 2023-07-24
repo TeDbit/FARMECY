@@ -1,22 +1,46 @@
-import "./Navbar.css";
-import React,{Component} from 'react';
+import "/home/ted/newapp/src/Components/Navbar/Navbar.css"
+import React, { useState } from 'react';
 import {FiBell} from 'react-icons/fi';
-import {RxAvatar} from 'react-icons/rx';
+import {FiUser} from 'react-icons/fi';
 import {FiLogOut} from 'react-icons/fi';
 
-export class Navbar extends Component {
-    render(){
+const Navbar =() => {
+
+    const [open, setOpen] = useState(false);
+
+    const DropD = ['Profile','Logout'];
+
         return(
             <div className='navbar'>
                 <img src="/logoF.png" className="logo" alt="logo" />
                 <div  className='rnav'>
-                 <FiBell fontSize={'24px'}/>
-                 <FiLogOut fontSize={'24px'}/>
-                 <RxAvatar fontSize={'45px'} color="#609260"/>
+                    <FiBell id="bell" fontSize={'24px'}/>
+                    <FiLogOut id="logout" fontSize={'24px'}/>
+                    <div  onClick={()=>setOpen(!open)} id="avatarbox">
+                    <FiUser id="avatar"  fontSize={'34px'} />
+                    </div>
+                    {
+                        open &&
+
+                        <div className="dropd">
+                        <div>
+                            <h2>ADMIN</h2>
+                        </div>
+                        <ul className="mList">
+                           { DropD.map((menu) => (
+                                <li className="menu" key={menu}>{menu}</li>
+                           ))}
+
+                        </ul>
+                    </div> 
+
+                    }
+        
                 </div>
  
             </div>
         )
-    }
+    
 }
 
+export default Navbar
