@@ -1,5 +1,5 @@
 import React from "react";
-import "/home/ted/newapp/src/Styles/New.css"
+import "../Styles/New.css"
 
 import { FiUpload} from "react-icons/fi";
 

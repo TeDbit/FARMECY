@@ -1,4 +1,4 @@
-import "/home/ted/newapp/src/Components/Navbar/Navbar.css"
+import "./Navbar.css"
 import React, { useRef, useState } from 'react';
 import {FiBell} from 'react-icons/fi';
 import {FiUser} from 'react-icons/fi';
