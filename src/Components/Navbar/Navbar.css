@@ -19,7 +19,12 @@
     z-index: 1;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
   }
-
+  .lnav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
   .rnav {
     width: fit-content;
     height: fit-content;
@@ -35,14 +40,10 @@
 
   .logo {
     height:100%;
-    width:150px;
+    width:130px;
     align-self: center;
   }
 
-  *.rnav :hover{
-    color:  #609260;
-
-  }
  
   #avatarbox{
     display: flex;
@@ -53,23 +54,25 @@
     color: #ffffff;
     border-style: solid;
     border-color: #ffffff;
-    background-color: #609260;
+    background-color: none;
     border-radius: 24px;
     transition: width 0.3s ease-in-out;
+    /* opacity: 0.0; */
+    z-index: 0;
   }
 
-  #avatarbox :hover{
-    display: flex;
-    width:48px;
-    height:48px;
-    border-style: solid;
-    border-color: #ffffff;
-    border-radius: 24px;
-    background-color: #ffffff;
-    color: #609260;
-    
-  
-  } 
+
+  #avatar{
+    /* all: unset; */
+    z-index: -1;
+    border-radius: 34px;
+    background-color: black;
+    /* font-size: 60px */
+    width: 48px;
+    height: 45px;
+  }
+
+
 
   .dropd{
     height: fit-content;
@@ -78,6 +81,7 @@
     /* border-color: black; */
     position: absolute;
     display: flex;
+    padding: 5px;
     flex-direction: column;
     top: 74px;
     align-items: flex-start;
@@ -90,7 +94,6 @@
   .mList{
     padding: 0px;
     width: 100%;
-    padding-left: 5px;
     padding-right: 5px;
     display: flex;
     flex-direction: column;
@@ -99,11 +102,12 @@
     /* background-color: #9e9e9e; */
     gap: 10px;
   }
+
   .menu{
     font-size: 24px;
     list-style-type: none;
     padding: 5px;
-    background-color: #609260;
+    /* background-color: #609260; */
   }
 
   

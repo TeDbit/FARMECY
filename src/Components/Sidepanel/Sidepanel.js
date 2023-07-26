@@ -10,6 +10,8 @@ import {FiHelpCircle} from 'react-icons/fi';
 import {RiLinkedinBoxLine} from 'react-icons/ri';
 import {FiSettings} from 'react-icons/fi';
 import { useState } from "react";
+import {RiArrowLeftDoubleLine} from 'react-icons/ri';
+
 
 
 
@@ -52,27 +54,50 @@ const Sidepanel=({children})=>{
             }
         ]
         return(
-            <div className="sideB">
-                <div className="sidebIn">
-                   
-                    <div className="sideListy">
-                        {
-                            navData.map((item,index)=>(
-                                <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                                       
-                                            <div className="sideListx"><div>{item.icon}</div><h3>{item.name}</h3></div>
-                                    
-                                                                        
-                                    
-                                </NavLink>
+            <div style={{
+                            width:isOpen ? "240px" : "64px",
+                            paddingRight:isOpen ? "":"16px"
 
-                            ))
-                            
-                        }
+                        }} className="sideB">
+                <div className="sidebIn">
+                    <div className="sideTop">
+                        <RiArrowLeftDoubleLine onClick={toggle} className="collapse" id="collapse" fontSize={'24px'}/>
+                        <div className="sideListy">
+                            {
+                                navData.map((item,index)=>(
+                                    <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                                        
+                                        <div className="sideListx">
+                                            <div>{item.icon}</div>
+                                            <h3 style={{display:isOpen ? "" : "none"}} >{item.name}</h3>
+                                        </div>
+                                        
+                                                                            
+                                        
+                                    </NavLink>
+
+                                ))
+                                
+                            }
+                        </div>
                     </div>
                     
 
-                   <div className="sideLow">
+                   <div style={{
+
+                        flexDirection :isOpen ? "row" : "column" ,
+                        // transform:isOpen ? "":"rotate(-90deg)" ,
+                        // minWidth:isOpen ? "":"fit-content" ,
+                        width:isOpen ? "":"100px" ,
+                        height:isOpen ? "":"200px" ,
+
+                        alignSelf:isOpen ? "":"center" ,
+
+
+
+                        // background:isOpen? "black":"blue" 
+                    }}
+                   className="sideLow">
                     <FiSettings fontSize={'24px'}/>
 
                     <RiLinkedinBoxLine fontSize={'24px'}/>
@@ -81,8 +106,6 @@ const Sidepanel=({children})=>{
 
                     </div>
                 </div>
-         
-                <div className="line"></div>
                     <main>{children}</main>
              </div>
              

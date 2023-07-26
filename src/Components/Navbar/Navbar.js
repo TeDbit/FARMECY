@@ -1,34 +1,57 @@
 import "/home/ted/newapp/src/Components/Navbar/Navbar.css"
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {FiBell} from 'react-icons/fi';
 import {FiUser} from 'react-icons/fi';
 import {FiLogOut} from 'react-icons/fi';
+import {RiArrowRightDoubleFill} from 'react-icons/ri';
 
 const Navbar =() => {
 
+
     const [open, setOpen] = useState(false);
 
+    const menuRef = useRef();
+    const avibRef = useRef();
+
+    // console.log({aviRef});
+
+
     const DropD = ['Profile','Logout'];
+    window.addEventListener('click', (e)=>{
+        if(e.target !== menuRef.parentElement && e.target !== avibRef.current){
+            
+            setOpen(false);
+
+        }
+
+   
+    
+    });
+
+
 
         return(
             <div className='navbar'>
+                <div className="lnav" >
                 <img src="/logoF.png" className="logo" alt="logo" />
-                <div  className='rnav'>
+                </div>
+        
+                <div   className='rnav'>
                     <FiBell id="bell" fontSize={'24px'}/>
                     <FiLogOut id="logout" fontSize={'24px'}/>
-                    <div  onClick={()=>setOpen(!open)} id="avatarbox">
-                    <FiUser id="avatar"  fontSize={'34px'} />
-                    </div>
+                    <button  ref={avibRef}  onClick={()=>setOpen(!open)} id="avatarbox">
+                    <FiUser  id="avatar"  fontSize={'34px'} />
+                    </button>
                     {
                         open &&
 
-                        <div className="dropd">
+                        <div ref={menuRef} className="dropd">
                         <div>
                             <h2>ADMIN</h2>
                         </div>
                         <ul className="mList">
                            { DropD.map((menu) => (
-                                <li className="menu" key={menu}>{menu}</li>
+                                <li onClick={()=>setOpen(false)} className="menu" key={menu}>{menu}</li>
                            ))}
 
                         </ul>

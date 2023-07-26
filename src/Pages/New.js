@@ -53,7 +53,7 @@ const New =() => {
               
           </div>
   </div>
-  <div class="lowerspace">
+  <div className="lowerspace">
        <button>Send</button>
 
        <button >Draft</button>
