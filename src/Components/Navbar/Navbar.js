@@ -17,16 +17,16 @@ const Navbar =() => {
 
 
     const DropD = ['Profile','Logout'];
-    window.addEventListener('click', (e)=>{
-        if(e.target !== menuRef.parentElement && e.target !== avibRef.current){
+    // window.addEventListener('click', (e)=>{
+    //     if(e.target !== menuRef.parentElement && e.target !== avibRef.current){
             
-            setOpen(false);
+    //         setOpen(false);
 
-        }
+    //     }
 
    
     
-    });
+    // });
 
 
 

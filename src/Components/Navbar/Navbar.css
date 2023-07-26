@@ -54,25 +54,16 @@
     color: #ffffff;
     border-style: solid;
     border-color: #ffffff;
-    background-color: none;
+    background-color: #609260;
     border-radius: 24px;
     transition: width 0.3s ease-in-out;
-    /* opacity: 0.0; */
-    z-index: 0;
   }
-
 
   #avatar{
-    /* all: unset; */
-    z-index: -1;
-    border-radius: 34px;
+
+    border-radius: 24px;
     background-color: black;
-    /* font-size: 60px */
-    width: 48px;
-    height: 45px;
   }
-
-
 
   .dropd{
     height: fit-content;
