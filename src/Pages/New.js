@@ -26,10 +26,7 @@ const New =() => {
                   <label>Message Preview</label>
                   <div className="preview"></div>
               </div>
-              <div className="log-container">
-                  <label>Logs</label>
-                  <div className="logs"></div>
-              </div>
+       
               
           </div>
           <div className="dragdrop-container">
@@ -58,6 +55,10 @@ const New =() => {
 
        <button >Draft</button>
    </div>
+   <div className="log-container">
+        <label>Logs</label>
+        <div className="logs"></div>
+    </div>
 </div>
     );
   };
