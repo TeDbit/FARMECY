@@ -40,6 +40,7 @@
   /* padding-bottom: 20px; */
   flex-basis: 24px;
   flex-shrink: 0;
+  color: #dddddd;
   /* display: flex; */
   align-self: flex-end;
   justify-self: flex-end;
@@ -109,7 +110,7 @@
     border-radius: 8px;
     border-color: white;
     background: white;    
-    gap: 1rem;
+    gap: 10px;
     color:#0A0908;
     ;
   }

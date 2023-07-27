@@ -6,11 +6,10 @@ import {RiDraftLine} from 'react-icons/ri';
 import {RiMailCheckLine} from 'react-icons/ri';
 import {FiUsers} from 'react-icons/fi';
 import {FiEdit} from 'react-icons/fi';
-import {FiHelpCircle} from 'react-icons/fi';
 import {RiLinkedinBoxLine} from 'react-icons/ri';
-import {FiSettings} from 'react-icons/fi';
 import { useState } from "react";
 import {RiArrowLeftDoubleLine} from 'react-icons/ri';
+import {RiArrowRightDoubleLine} from 'react-icons/ri';
 
 
 
@@ -61,7 +60,8 @@ const Sidepanel=({children})=>{
                         }} className="sideB">
                 <div className="sidebIn">
                     <div className="sideTop">
-                        <RiArrowLeftDoubleLine onClick={toggle} className="collapse" id="collapse" fontSize={'24px'}/>
+                        <RiArrowLeftDoubleLine onClick={toggle} style={{display:isOpen ? "" : "none"}} className="collapse" id="collapse" fontSize={'24px'}/>
+                        <RiArrowRightDoubleLine onClick={toggle} style={{display:!isOpen ? "" : "none"}} className="collapse" id="collapse" fontSize={'24px'}/>
                         <div className="sideListy">
                             {
                                 navData.map((item,index)=>(
@@ -98,11 +98,10 @@ const Sidepanel=({children})=>{
                         // background:isOpen? "black":"blue" 
                     }}
                    className="sideLow">
-                    <FiSettings fontSize={'24px'}/>
+                 
 
                     <RiLinkedinBoxLine fontSize={'24px'}/>
 
-                    <FiHelpCircle fontSize={'24px'}/>
 
                     </div>
                 </div>

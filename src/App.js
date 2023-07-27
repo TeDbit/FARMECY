@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import  Navbar  from "./Components/Navbar/Navbar";
 import  Sidepanel from "./Components/Sidepanel/Sidepanel";
-// import { Main } from "./Components/Main/Main";
 import Dashboard from "./Pages/Dashboard"
 import New from "./Pages/New"
 import Clients from "./Pages/Clients"
@@ -20,7 +19,8 @@ function App() {
           <Navbar></Navbar>
           <div className="center">
               <Sidepanel> </Sidepanel>
-              <Routes>
+            <div className="main">
+            <Routes>
                 <Route path="/" element={<Dashboard/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/new" element={<New/>}/>
@@ -32,6 +32,8 @@ function App() {
                 <Route path="/about" element={<About/>}/>
                 
               </Routes>
+            </div>
+
                 
             </div>
        </div>

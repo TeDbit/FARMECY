@@ -94,10 +94,19 @@
   }
 
   .menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 24px;
+    gap: 10px;
     list-style-type: none;
     padding: 5px;
-    /* background-color: #609260; */
+    background-color: #609260;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 12px;
   }
 
   
