@@ -19,6 +19,11 @@
     z-index: 1;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
   }
+
+  .bars{
+    display: none;
+  }
+
   .lnav{
     display:flex;
     justify-content: space-between;
@@ -36,6 +41,9 @@
     /* background-color: blue; */
     list-style-type: none;
     gap: 1rem;
+  }
+  .sideP{
+    display: none;
   }
 
   .logo {
@@ -144,5 +152,25 @@
   z-index: 1;
 }
 
+.sideP{
+  height: 1024px;
+  width: fit-content;
+  /* border-style: solid; */
+  /* border-color: black; */
+  position: absolute;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  top: 72px;
+  left: 0px;
+  align-items: flex-start;
+  background: white;
+  box-shadow: 5px 10px 15px #9e9e9e;
+}
+
+
+.bars{
+  display: flex;
+}
     
   }

@@ -18,7 +18,10 @@ function App() {
         <div className="allBody">
           <Navbar></Navbar>
           <div className="center">
-              <Sidepanel> </Sidepanel>
+            <div className="sidepCont">
+            <Sidepanel> </Sidepanel>
+            </div>
+             
             <div className="main">
             <Routes>
                 <Route path="/" element={<Dashboard/>}/>

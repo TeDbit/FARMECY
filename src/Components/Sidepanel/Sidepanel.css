@@ -3,13 +3,14 @@
     position: sticky;
     top: 0;
     left:0;
+    height: 100%;
     display: flex;
     flex-shrink: 0;
     flex-grow: 0;
     justify-content: space-between;
     /* background-color: rgb(90, 139, 101); */
 
-    width: 35px;
+    width: 240px;
     /* max-width: 17%;
     min-width: 17%; */
     gap:16px;
@@ -159,13 +160,3 @@
     background-color: #F2F2F2;
   }
 
-  @media only screen and (max-width: 900px) {
-    .sideB {
-      display: none;
-      padding-right: 2px;
-      justify-content: space-between;
-      /*background-color: blue;*/
-      width: fit-content;
-      height: 100vh;
-    }
-  }
