@@ -62,14 +62,14 @@ button {
   padding-left: 1%;
   padding-right: 2.5%;
   /* background-color: #667085; */
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .main {
   display: flex;
   padding: 30px 2% 0% 5%;
   width:100% ;
-  overflow: scroll;
+  /* overflow: scroll; */
   /* background-color:greenyellow; */
   justify-content: space-between;
 
