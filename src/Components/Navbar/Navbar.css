@@ -73,10 +73,10 @@
     height:48px;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #609260;
     border-style: solid;
     border-color: #ffffff;
-    background-color: #0A0908;
+    background-color: #eeeeee;
     border-radius: 24px;
     transition: width 0.3s ease-in-out;
   }
@@ -134,6 +134,8 @@
     gap: 10px;
     list-style-type: none;
     padding: 5px;
+    border-radius: 8px;
+    color: #ffffff;
     background-color: #505A50;
     font-family: 'Inter';
     font-style: normal;
@@ -171,7 +173,7 @@
   /* border-color: black; */
   position: absolute;
   display: flex;
-  padding: 5px;
+  padding: 20px 5px 5px 5px;
   flex-direction: column;
   top: 72px;
   left: 0px;
@@ -184,5 +186,8 @@
 .bars{
   display: flex;
 }
+
+
+
     
   }

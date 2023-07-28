@@ -109,7 +109,7 @@ const Navbar =() => {
         return(
             <div className='navbar'>
                 <div className="lnav" >
-                <div onClick={()=>setSopen(!Sopen)} >
+                <div onClick={()=>setSopen(!Sopen)} className="iconC" >
                 <HiBars3 className="bars" fontSize={'24px'}/>
                 </div>
                 {
@@ -160,7 +160,7 @@ const Navbar =() => {
                 </div>
         
                 <div   className='rnav'>
-                    <FiBell id="bell" fontSize={'24px'}/>
+                    <div className="iconC" > <FiBell id="bell" fontSize={'24px'}/> </div>
                    
                     <button  ref={avibRef}  onClick={()=>setPopen(!Popen)} id="avatarbox">
                     <FiUser  id="avatar"  fontSize={'34px'} />

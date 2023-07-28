@@ -75,6 +75,25 @@ button {
 
 }
 
+.iconC{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  /* color:aqua; */
+  /* background-color: #D0D5DD; */
+  border-style: none;
+  border-radius: 15px;
+}
+
+.iconC:hover{
+  color: #609260;
+  background-color: #eeeeee;
+
+}
+
+
 
 
 
