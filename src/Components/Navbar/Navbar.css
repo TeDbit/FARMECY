@@ -2,18 +2,18 @@
 
 
 .navbar {
-    /* position:sticky;
-    top:0; */
+    position:sticky;
+    top:0;
     display:flex;
     flex-shrink: 0;
     vertical-align: middle;
-    /* background-color:#923939; */
+    background-color:#ffffff;
     padding-left: 1% ;
     padding-right: 2.5%;
-    padding-top: 8px;
+    padding-top: px;
     /* max-width: 1440px; */
     width: 100%;
-    height: 80px;
+    height: 54px;
     justify-content: space-between;
     object-fit: cover;
     z-index: 1;
@@ -47,8 +47,8 @@
   }
 
   .logo {
-    height: 60px;
-    width:105px;
+    height: 48px;
+    width:88px;
     align-self: center;
   }
 
@@ -85,14 +85,14 @@
 
   .dropd{
     height: fit-content;
-    width: 200px;
+    width: 150px;
     /* border-style: solid; */
     /* border-color: black; */
     position: absolute;
     display: flex;
     padding: 5px;
     flex-direction: column;
-    top: 74px;
+    top: 54px;
     align-items: flex-start;
     background: white;
     box-shadow: 5px 5px 15px #9e9e9e;
@@ -148,7 +148,7 @@
   @media only screen and (max-width:900px){
 
 
-.navbar {
+/* .navbar {
   position:sticky;
   top:0;
   display:flex;
@@ -164,10 +164,10 @@
   justify-content: space-between;
   object-fit: cover;
   z-index: 1;
-}
+} */
 
 .sideP{
-  height: 1024px;
+  height: fit-content;
   width: fit-content;
   /* border-style: solid; */
   /* border-color: black; */
@@ -175,7 +175,7 @@
   display: flex;
   padding: 20px 5px 5px 5px;
   flex-direction: column;
-  top: 72px;
+  top: 54px;
   left: 0px;
   align-items: flex-start;
   background: white;

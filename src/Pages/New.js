@@ -18,7 +18,11 @@ const New =() => {
       <div className="container">
           <div className="upperc">
               <div className="messagefield">
-                  <textarea id="freeform" name="Message" placeholder="Enter Message*"></textarea>
+                  <div className="messagecontainer" >  
+                     <label>Message</label>
+                     <textarea id="freeform" name="Message" placeholder="Enter Message*"></textarea>
+                  </div>
+                  
                   <input type="text" placeholder="Enter Subject Line*"/>
                   <input type="text" placeholder="Enter Sender Name"/>
               </div>
@@ -55,10 +59,6 @@ const New =() => {
    <div className="log-container">
         <label>Logs</label>
         <div className="logs"></div>
-    </div>
-    <div className="log-container-m">
-                  <label>Logs</label>
-                  <div className="logs"></div>
     </div>
 </div>
     );

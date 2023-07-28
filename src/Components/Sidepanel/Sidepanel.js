@@ -56,7 +56,7 @@ const Sidepanel=({children})=>{
         ]
         return(
             <div style={{
-                            width:isOpen ? "240px" : "64px",
+                            width:isOpen ? "" : "64px",
                             paddingRight:isOpen ? "":"16px"
 
                         }} className="sideB">

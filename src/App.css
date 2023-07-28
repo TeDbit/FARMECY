@@ -28,8 +28,8 @@ button {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  width: 129px;
-  height: 48px;
+  width: 86px;
+  height: 34px;
   border-color: #D0D5DD;
   border-radius: 8px;
   background: white;
@@ -143,10 +143,10 @@ button {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    width: 86px;
-    height: 32px;
+    font-size: 14px;
+    /* line-height: 22px; */
+    width: 72px;
+    height: 28px;
     border-color: #D0D5DD;
     border-radius: 8px;
     background: white;
@@ -161,7 +161,7 @@ button {
 
  
     .allBody {
-      min-height: 150vh;
+      min-height: 200vh;
       /* position:-ms-page; */
       /* background-color: #282c34; */
       /* padding-right: 2.5%;
@@ -174,8 +174,9 @@ button {
       flex-direction: row;
       /* background-color: #667085; */
       width: 100%;
-      height: 1600px;
+      height: 00px;
       padding-top: 30px;
+      padding-bottom: 20px;
   
     }
   }

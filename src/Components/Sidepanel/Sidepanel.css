@@ -1,16 +1,19 @@
 
   .sideB {
+    position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    left:0;
-    height: 100%;
+
+    top: 54px;
+    left:0px;
+    height: calc(100vh - 54px);
+    min-height: 400px;
     display: flex;
     flex-shrink: 0;
     flex-grow: 0;
     justify-content: space-between;
     /* background-color: rgb(90, 139, 101); */
 
-    width: 240px;
+    width: 192px;
     /* max-width: 17%;
     min-width: 17%; */
     gap:16px;

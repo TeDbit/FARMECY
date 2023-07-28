@@ -31,31 +31,31 @@ const Navbar =() => {
     const  navData = [
         {
             id:0,
-            icon:<FiEdit fontSize={'24px'}/>,
+            icon:<FiEdit fontSize={'21px'}/>,
             name:"New",
             path:"/new",
         },
         {
             id:1,
-            icon:<FiInbox fontSize={'24px'}/>,
+            icon:<FiInbox fontSize={'21px'}/>,
             name:"Inbox",
             path:"/inbox",
         },
         {
             id:2,
-            icon:<RiMailCheckLine fontSize={'24px'}/>,
+            icon:<RiMailCheckLine fontSize={'21px'}/>,
             name:"Sent",
             path:"/sent",
         },
         {
             id:3,
-            icon:<RiDraftLine fontSize={'24px'}/>,
+            icon:<RiDraftLine fontSize={'21px'}/>,
             name:"Drafts",
             path:"/drafts",
         },
         {
             id:4,
-            icon:<FiUsers fontSize={'24px'}/>,
+            icon:<FiUsers fontSize={'21px'}/>,
             name:"Clients",
             path:"/clients",
         }
@@ -63,25 +63,25 @@ const Navbar =() => {
     const  DropD = [
         {
             id:0,
-            icon: <FiUser  id="user"  fontSize={'24px'} />,
+            icon: <FiUser  id="user"  fontSize={'21px'} />,
             name:"Profile",
             path:"/profile",
         },
         {
             id:1,
-            icon:<FiSettings fontSize={'24px'}/>,
+            icon:<FiSettings fontSize={'21px'}/>,
             name:"Settings",
             path:"/settings",
         },
         {
             id:2,
-            icon:<FiHelpCircle fontSize={'24px'}/>,
+            icon:<FiHelpCircle fontSize={'21px'}/>,
             name:"About",
             path:"/about",
         },
         {
             id:3,
-            icon:<FiLogOut fontSize={'24px'}/>,
+            icon:<FiLogOut fontSize={'21px'}/>,
             name:"Logout",
             path:"/logout",
         },
@@ -110,7 +110,7 @@ const Navbar =() => {
             <div className='navbar'>
                 <div className="lnav" >
                 <div onClick={()=>setSopen(!Sopen)} className="iconC" >
-                <HiBars3 className="bars" fontSize={'24px'}/>
+                <HiBars3 className="bars" fontSize={'21px'}/>
                 </div>
                 {
                     Sopen &&
@@ -160,10 +160,10 @@ const Navbar =() => {
                 </div>
         
                 <div   className='rnav'>
-                    <div className="iconC" > <FiBell id="bell" fontSize={'24px'}/> </div>
+                    <div className="iconC" > <FiBell id="bell" fontSize={'21px'}/> </div>
                    
                     <button  ref={avibRef}  onClick={()=>setPopen(!Popen)} id="avatarbox">
-                    <FiUser  id="avatar"  fontSize={'34px'} />
+                    <FiUser  id="avatar"  fontSize={'30px'} />
                     </button>
                     {
                         Popen &&
