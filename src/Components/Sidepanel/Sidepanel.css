@@ -47,6 +47,18 @@
   justify-self: flex-end;
  } 
 
+ .collapse:hover{
+  /* background-color: aqua; */
+  /* margin-left:90%; */
+  /* padding-bottom: 20px; */
+  flex-basis: 24px;
+  flex-shrink: 0;
+  color: #0A0908;
+  /* display: flex; */
+  align-self: flex-end;
+  justify-self: flex-end;
+ } 
+
   .sideLow {
     display: flex;
     flex-direction: row;
@@ -60,9 +72,6 @@
     /* transform: rotate(90deg); */
   }
   
-  *.sideLow :hover {
-    color:#609260;
-  }
 
   .sideListy {
     display: flex;
@@ -116,7 +125,7 @@
     ;
   }
 
-  .link :hover{
+  .link:hover{
     background :#505A50;
     color: white;
     transition:all 0.1s;
@@ -134,7 +143,7 @@
     border-radius: 8px;
    
   }
-  .active :hover {
+  .active:hover {
     background :#0A0908;
     color: white;
   

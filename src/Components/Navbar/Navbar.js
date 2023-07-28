@@ -114,7 +114,7 @@ const Navbar =() => {
                 </div>
                 {
                     Sopen &&
-                    <div onClick={()=>setSopen(false)}  className="sideP">
+                    <div  className="sideP">
                    <div  className="sideB">
                     <div className="sidebIn">
                     <div className="sideTop">
@@ -124,7 +124,7 @@ const Navbar =() => {
                                 navData.map((item,index)=>(
                                     <NavLink to={item.path} key={index} className="link" activeclassName="active">
                                         
-                                        <div className="sideListx">
+                                        <div onClick={()=>setSopen(false)}  className="sideListx">
                                             <div>{item.icon}</div>
                                             <h3  >{item.name}</h3>
                                         </div>
