@@ -115,41 +115,39 @@ const Navbar =() => {
                 {
                     Sopen &&
                     <div  className="sideP">
-                   <div  className="sideB">
-                    <div className="sidebIn">
-                    <div className="sideTop">
-                        
-                        <div className="sideListy">
-                            {
-                                navData.map((item,index)=>(
-                                    <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                                <div className="sidebIn">
+                                    <div className="sideTop">
                                         
-                                        <div onClick={()=>setSopen(false)}  className="sideListx">
-                                            <div>{item.icon}</div>
-                                            <h3  >{item.name}</h3>
+                                        <div className="sideListy">
+                                            {
+                                                navData.map((item,index)=>(
+                                                    <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                                                        
+                                                        <div onClick={()=>setSopen(false)}  className="sideListx">
+                                                            <div>{item.icon}</div>
+                                                            <h3  >{item.name}</h3>
+                                                        </div>
+                                                        
+                                                                                            
+                                                        
+                                                    </NavLink>
+
+                                                ))
+                                                
+                                            }
                                         </div>
-                                        
-                                                                            
-                                        
-                                    </NavLink>
-
-                                ))
+                                    </div>
                                 
-                            }
-                        </div>
-                    </div>
-                    
 
-                   <div 
-                   className="sideLow">
-                 
+                                <div 
+                            className="sideLow">
+                            
 
-                    <RiLinkedinBoxLine fontSize={'24px'}/>
+                                <RiLinkedinBoxLine fontSize={'24px'}/>
 
 
-                    </div>
-                </div>
-             </div>
+                                </div>
+                            </div>
              
                     </div>
                    

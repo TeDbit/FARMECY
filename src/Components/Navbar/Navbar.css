@@ -44,6 +44,7 @@
   }
   .sideP{
     display: none;
+
   }
 
   .logo {
@@ -167,13 +168,16 @@
 } */
 
 .sideP{
-  height: fit-content;
-  width: fit-content;
+  width: 192px;
+  height: calc( 100vh - 54px);
+
   /* border-style: solid; */
   /* border-color: black; */
   position: absolute;
   display: flex;
-  padding: 20px 5px 5px 5px;
+  padding: 20px 5px 0px 5px;
+  overflow-y: scroll;
+
   flex-direction: column;
   top: 54px;
   left: 0px;
