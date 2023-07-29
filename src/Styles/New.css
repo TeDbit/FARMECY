@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     width:100% ;
-    max-height: 100vh;
+    max-height: 100dvh;
     min-height: 1456px;
     /* overflow: scroll; */
     /* background-color:greenyellow; */
@@ -104,7 +104,7 @@ input::placeholder {
     flex-shrink: 0;
     flex-direction: column;
     width: 100%;
-    min-height: 60%;
+    min-height: 70%;
   
     /* background-color: aqua; */
   }
@@ -166,7 +166,7 @@ input::placeholder {
     display:flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 30%;
     padding-bottom: 60px;
     gap: 10px;
   }
@@ -261,7 +261,6 @@ input::placeholder {
       flex-direction: column;
       padding: 20px 0px 20px 0px;
       width: 100%;
-      height: 40%;
       gap: 1rem;
     }
 
@@ -335,14 +334,14 @@ input::placeholder {
       }
 
 
-  .lowerspace {
-    /* background-color: #667085; */
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 1%;
-    padding-bottom: 10px;
-  }
+      .lowerspace {
+        /* background-color: #667085; */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1%;
+        padding-bottom: 10px;
+      }
 
 
     }

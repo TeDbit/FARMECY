@@ -109,7 +109,7 @@ const Navbar =() => {
         return(
             <div className='navbar'>
                 <div className="lnav" >
-                <div onClick={()=>setSopen(!Sopen)} className="iconC" >
+                <div onClick={()=>setSopen(!Sopen)} className="iconCb" >
                 <HiBars3 className="bars" fontSize={'21px'}/>
                 </div>
                 {
