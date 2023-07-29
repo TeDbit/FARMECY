@@ -99,20 +99,20 @@ const Navbar =() => {
     // console.log({aviRef});
 
 
-    window.addEventListener('click', (e)=>{
-        if(e.target !== avibRef.current && e.target !== menuRef.current){
+    // window.addEventListener('click', (e)=>{
+    //     if(e.target !== avibRef.current && e.target !== menuRef.current){
             
-            setPopen(false);
+    //         setPopen(false);
 
-        }
+    //     }
         
-        if(e.target !== sideRef.current && e.target !== sideCRef.current){
-            setSopen(false);
-        }
+    //     if(e.target !== sideRef.current && e.target !== sideCRef.current){
+    //         setSopen(false);
+    //     }
 
    
     
-    });
+    // });
 
 
 
