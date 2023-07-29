@@ -89,32 +89,42 @@ const Navbar =() => {
     ]
     const menuRef = useRef();
     const avibRef = useRef();
+    const sideRef = useRef();
+    const sideCRef = useRef();
+    // const bellRef = useRef();
+    // const avRef = useRef();
+
+
 
     // console.log({aviRef});
 
 
-    // window.addEventListener('click', (e)=>{
-    //     if(e.target !== menuRef.parentElement && e.target !== avibRef.current){
+    window.addEventListener('click', (e)=>{
+        if(e.target !== avibRef.current && e.target !== menuRef.current){
             
-    //         setOpen(false);
+            setPopen(false);
 
-    //     }
+        }
+        
+        if(e.target !== sideRef.current && e.target !== sideCRef.current){
+            setSopen(false);
+        }
 
    
     
-    // });
+    });
 
 
 
         return(
             <div className='navbar'>
                 <div className="lnav" >
-                <div onClick={()=>setSopen(!Sopen)} className="iconCb" >
-                <HiBars3 className="bars" fontSize={'21px'}/>
-                </div>
+                <button ref={sideCRef} onClick={()=>setSopen(!Sopen)} id="iconCb" >
+                <HiBars3 id="bars" fontSize={'21px'}/>
+                </button>
                 {
                     Sopen &&
-                    <div  className="sideP">
+                    <div  ref={sideRef} className="sideP">
                                 <div className="sidebIn">
                                     <div className="sideTop">
                                         

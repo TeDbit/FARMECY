@@ -8,7 +8,7 @@
     flex-shrink: 0;
     vertical-align: middle;
     background-color:#ffffff;
-    padding-left: 1% ;
+    padding-left: 3% ;
     padding-right: 2.5%;
     padding-top: px;
     /* max-width: 1440px; */
@@ -20,9 +20,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
   }
 
-  .bars{
-    display: none;
-  }
 
   .lnav{
     display:flex;
@@ -66,6 +63,7 @@
     background-color: #609260;
     border-radius: 24px;
     transition: width 0.3s ease-in-out;
+    z-index: 1;
   }
 
   #avatarbox:hover{
@@ -80,6 +78,11 @@
     background-color: #eeeeee;
     border-radius: 24px;
     transition: width 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  #avatar:hover , #avatar{
+    z-index: -1;
   }
   
   
@@ -169,7 +172,7 @@
 
 .sideP{
   width: 192px;
-  height: calc( 100vh - 54px);
+  height: calc( 100dvh - 54px);
 
   /* border-style: solid; */
   /* border-color: black; */
@@ -187,11 +190,9 @@
 }
 
 
-.bars{
-  display: flex;
+#bars:hover , #bars{
+  display: block;
+  z-index: -1;
 }
-
-
-
     
   }
