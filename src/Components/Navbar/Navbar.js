@@ -1,5 +1,4 @@
 import "./Navbar.css"
-import  Sidepanel from "../Sidepanel/Sidepanel";
 
 import React, { useRef, useState } from 'react';
 import {FiBell} from 'react-icons/fi';
@@ -16,8 +15,7 @@ import {RiMailCheckLine} from 'react-icons/ri';
 import {FiUsers} from 'react-icons/fi';
 import {FiEdit} from 'react-icons/fi';
 import {RiLinkedinBoxLine} from 'react-icons/ri';
-import {RiArrowLeftDoubleLine} from 'react-icons/ri';
-import {RiArrowRightDoubleLine} from 'react-icons/ri';
+
 
 
 
@@ -117,23 +115,23 @@ const Navbar =() => {
 
 
         return(
-            <div className='navbar'>
-                <div className="lnav" >
+            <div id='navbar'>
+                <div id="lnav" >
                 <button ref={sideCRef} onClick={()=>setSopen(!Sopen)} id="iconCb" >
                 <HiBars3 id="bars" fontSize={'21px'}/>
                 </button>
                 {
                     Sopen &&
-                    <div  ref={sideRef} className="sideP">
-                                <div className="sidebIn">
-                                    <div className="sideTop">
+                    <div  ref={sideRef} id="sideP">
+                                <div id="sidebIn">
+                                    <div id="sideTop">
                                         
-                                        <div className="sideListy">
+                                        <div id="sideListy">
                                             {
                                                 navData.map((item,index)=>(
-                                                    <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                                                    <NavLink to={item.path} key={index} id="link" >
                                                         
-                                                        <div onClick={()=>setSopen(false)}  className="sideListx">
+                                                        <div onClick={()=>setSopen(false)}  id="sideListx">
                                                             <div>{item.icon}</div>
                                                             <h3  >{item.name}</h3>
                                                         </div>
@@ -150,7 +148,7 @@ const Navbar =() => {
                                 
 
                                 <div 
-                            className="sideLow">
+                            id="sideLow">
                             
 
                                 <RiLinkedinBoxLine fontSize={'24px'}/>
@@ -164,11 +162,11 @@ const Navbar =() => {
                 }
              
 
-                <img src="/logoF.png" className="logo" alt="logo" />
+                <img src="/logoF.png" id="logo" alt="logo" />
                 </div>
         
-                <div   className='rnav'>
-                    <div className="iconC" > <FiBell id="bell" fontSize={'21px'}/> </div>
+                <div   id='rnav'>
+                    <div id="iconC" > <FiBell id="bell" fontSize={'21px'}/> </div>
                    
                     <button  ref={avibRef}  onClick={()=>setPopen(!Popen)} id="avatarbox">
                     <FiUser  id="avatar"  fontSize={'30px'} />
@@ -176,13 +174,13 @@ const Navbar =() => {
                     {
                         Popen &&
 
-                        <div ref={menuRef} className="dropd">
+                        <div ref={menuRef} id="dropd">
                         <div>
                             <h2>ADMIN</h2>
                         </div>
-                        <ul className="mList">
+                        <ul id="mList">
                            { DropD.map((menu) => (
-                                <li onClick={()=>setPopen(false)} className="menu" key={menu}>{menu.icon}{menu.name}</li>
+                                <li onClick={()=>setPopen(false)} id="menu" key={menu}>{menu.icon}{menu.name}</li>
                            ))}
 
                         </ul>

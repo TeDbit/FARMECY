@@ -56,20 +56,20 @@ const Sidepanel=({children})=>{
         ]
         return(
             <div style={{
-                            width:isOpen ? "" : "64px",
+                            width:isOpen ? "" : "68px",
                             paddingRight:isOpen ? "":"16px"
 
-                        }} className="sideB">
-                <div className="sidebIn">
-                    <div className="sideTop">
-                        <RiArrowLeftDoubleLine onClick={toggle} style={{display:isOpen ? "" : "none"}} className="collapse" id="collapse" fontSize={'24px'}/>
-                        <RiArrowRightDoubleLine onClick={toggle} style={{display:!isOpen ? "" : "none"}} className="collapse" id="collapse" fontSize={'24px'}/>
-                        <div className="sideListy">
+                        }} id="sideB">
+                <div id="sidebIn">
+                    <div id="sideTop">
+                        <RiArrowLeftDoubleLine onClick={toggle} style={{display:isOpen ? "" : "none"}} id="collapse"  fontSize={'24px'}/>
+                        <RiArrowRightDoubleLine onClick={toggle} style={{display:!isOpen ? "" : "none"}} id="collapse"  fontSize={'24px'}/>
+                        <div id="sideListy">
                             {
                                 navData.map((item,index)=>(
-                                    <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                                    <NavLink to={item.path} key={index} id="link" >
                                         
-                                        <div className="sideListx">
+                                        <div id="sideListx">
                                             <div>{item.icon}</div>
                                             <h3 style={{display:isOpen ? "" : "none"}} >{item.name}</h3>
                                         </div>
@@ -91,7 +91,7 @@ const Sidepanel=({children})=>{
                         // transform:isOpen ? "":"rotate(-90deg)" ,
                         // minWidth:isOpen ? "":"fit-content" ,
                         width:isOpen ? "":"100px" ,
-                        height:isOpen ? "":"200px" ,
+                        height:isOpen ? "50px":"50px" ,
 
                         alignSelf:isOpen ? "":"center" ,
 
@@ -99,7 +99,7 @@ const Sidepanel=({children})=>{
 
                         // background:isOpen? "black":"blue" 
                     }}
-                   className="sideLow">
+                   id="sideLow">
                  
 
                     <RiLinkedinBoxLine fontSize={'24px'}/>

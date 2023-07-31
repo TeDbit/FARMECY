@@ -15,14 +15,14 @@ import About from "./Pages/About";
 function App() {
   return (
       <BrowserRouter>
-        <div className="allBody">
+        <div id="allBody">
           <Navbar></Navbar>
-          <div className="center">
-            <div className="sidepCont">
+          <div id="center">
+            <div id="sidepCont">
             <Sidepanel> </Sidepanel>
             </div>
              
-            <div className="main">
+            <div id="main">
             <Routes>
                 <Route path="/" element={<New/>}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
@@ -47,9 +47,9 @@ function App() {
   );
 }
 
-    // <div className="allBody">
+    // <div id="allBody">
     //   <Navbar />
-    //   <div className="center">
+    //   <div id="center">
     //     <Sidepanel />
     //     <Main />
     //   </div>

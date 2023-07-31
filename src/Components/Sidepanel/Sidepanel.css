@@ -1,5 +1,5 @@
 
-  .sideB {
+  #sideB {
 
     position: -webkit-sticky;
     position: sticky;
@@ -14,6 +14,8 @@
     padding: 0px 5px 30px 5px;
     /* overflow-y: scroll; */
     overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
+
   
     flex-direction: column;
     align-items: flex-start;
@@ -21,7 +23,7 @@
     /* box-shadow: 5px 10px 15px #9e9e9e; */
   }
 
-  .sidebIn {
+  #sidebIn {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,7 +32,7 @@
     height: 100%;
  
   }
-  .sideTop{
+  #sideTop{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -38,7 +40,7 @@
 
   }
   
- .collapse{
+ #collapse{
   /* background-color: aqua; */
   /* margin-left:90%; */
   /* padding-bottom: 20px; */
@@ -50,7 +52,7 @@
   justify-self: flex-end;
  } 
 
- .collapse:hover{
+ #collapse:hover{
   /* background-color: aqua; */
   /* margin-left:90%; */
   /* padding-bottom: 20px; */
@@ -62,7 +64,7 @@
   justify-self: flex-end;
  } 
 
-  .sideLow {
+  #sideLow {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,12 +73,13 @@
     height: 5%;
     gap: 5%;
     width: 100%;
-    transition: ease-in-out;
+    border-top: solid 2px #dddddd;
+    /* transition: ease-in-out; */
     /* transform: rotate(90deg); */
   }
   
 
-  .sideListy {
+  #sideListy {
     display: flex;
     height: fit-content;
     flex-direction: column;
@@ -88,7 +91,7 @@
   }
 
 
-  .sideListx {
+  #sideListx {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -103,7 +106,7 @@
 
   }
 
-  /* .sideListx :hover{
+  /* #sideListx :hover{
     background :#505A50;
     color: white;
     transition:all 0.1s;
@@ -112,7 +115,7 @@
     border-radius: 8px;
   } */
 
-  .link{
+  #link{
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -128,7 +131,7 @@
     ;
   }
 
-  .link:hover{
+  #link:hover{
     background :#505A50;
     color: white;
     transition:all 0.1s;
@@ -137,7 +140,7 @@
     border-radius: 8px;
   }
 
-  .active {
+  #link.active {
     background :#0A0908;
     color: white;
   
@@ -145,14 +148,6 @@
     border-style:hidden;
     border-radius: 8px;
    
-  }
-  .active:hover {
-    background :#0A0908;
-    color: white;
-  
-    border-width: 1px;
-    border-style:hidden;
-    border-radius: 8px;
   }
   
   h3 {
@@ -164,7 +159,7 @@
   }
 
  
-  .line {
+  #line {
     width: 2px;
     height: 100%;
     padding: 0px;
