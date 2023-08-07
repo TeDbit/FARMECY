@@ -15,7 +15,7 @@ const Clients = () => {
   //   }
   // }
 
-  const contactData = [
+  const [contactData, setContactData] = useState([
     {
       contactId: "0",
       name: "Kwame Appiah",
@@ -24,34 +24,92 @@ const Clients = () => {
     },
     {
       contactId: "1",
-      name: "Kwame Appiah",
-      number: "0241323456",
+      name: "Gabby Yu",
+      number: "0594883995",
       selected: false,
     },
     {
       contactId: "2",
-      name: "Kwame Appiah",
-      number: "0241323456",
+      name: "Sista Derby",
+      number: "0203679262",
       selected: false,
     },
     {
       contactId: "3",
-      name: "Kwame Appiah",
-      number: "0241323456",
+      name: "Nees Rock",
+      number: "0537692901",
       selected: false,
     },
     {
       contactId: "4",
-      name: "Kwame Appiah",
-      number: "0241323456",
+      name: "Archie Bald",
+      number: "0502589020",
       selected: false,
     },
-  ];
+  ]);
 
-  const checkElement = useRef();
-  const logCheck = () => {
-    console.log(checkElement.current);
+  // const checkElement = useRef();
+  // const logCheck = () => {
+  //   const val = checkElement.current.getAttribute("value");
+  //   console.log(val);
+  // };
+
+  const onCheckChange = (contactID) => {
+    const updateContact = contactData.map((contact) =>
+      contact.contactId === contactID
+        ? { ...contact, selected: !contact.selected }
+        : contact
+    );
+
+    setContactData(updateContact);
+    console.log(contactID);
   };
+
+  const markAll = () => {
+    var markCount = 0;
+    contactData.forEach((contact) => {
+      if (contact.selected) {
+        markCount++;
+      }
+      return markCount;
+    });
+    console.log(markCount);
+
+    const mark_all = contactData.map((contact) =>
+      markCount !== contactData.length
+        ? { ...contact, selected: true }
+        : { ...contact, selected: false }
+    );
+    setContactData(mark_all);
+  };
+
+  const deleteContact = () => {
+    const upContactData = contactData.filter((contact) => !contact.selected);
+    setContactData(upContactData);
+  };
+
+  const loadContacts = () =>
+    contactData.map((item, index) => (
+      <div id="seperation">
+        <Contacts name={item.name} number={item.number} />
+        <div
+          id="checkD"
+          style={{
+            display: !select ? "none" : "flex",
+          }}
+        >
+          <input
+            // ref={checkElement}
+            // onClick={() => logCheck()}
+            type="checkbox"
+            id="cbox"
+            value={item.name}
+            checked={item.selected}
+            onChange={() => onCheckChange(item.contactId)}
+          ></input>
+        </div>
+      </div>
+    ));
 
   return (
     <div id="mainD">
@@ -86,6 +144,7 @@ const Clients = () => {
             Cancel
           </button>
           <button
+            onClick={() => markAll()}
             style={{
               display: select ? "block" : "none",
             }}
@@ -93,6 +152,7 @@ const Clients = () => {
             Mark All
           </button>
           <button
+            onClick={() => deleteContact()}
             style={{
               display: select ? "block" : "none",
             }}
@@ -112,25 +172,7 @@ const Clients = () => {
         <input type="tel" placeholder="Enter Number*"></input>
         <button onClick={() => setNewC(false)}>Save</button>
       </div>
-      {contactData.map((item, index) => (
-        <div id="seperation">
-          <Contacts name={item.name} number={item.number} />
-          <div
-            id="checkD"
-            style={{
-              display: !select ? "none" : "flex",
-            }}
-          >
-            <input
-              ref={checkElement}
-              onClick={() => logCheck()}
-              type="checkbox"
-              id="cbox"
-              value={contactData.name}
-            ></input>
-          </div>
-        </div>
-      ))}
+      {loadContacts()}
     </div>
   );
 };
