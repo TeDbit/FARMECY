@@ -1,0 +1,9 @@
+#newContactC {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 20px;
+  padding: 10px 0px 10px 20px;
+  background-color: #ffffff;
+
+}
