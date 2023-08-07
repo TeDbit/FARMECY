@@ -52,6 +52,7 @@ const Clients = () => {
   // const logCheck = () => {
   //   const val = checkElement.current.getAttribute("value");
   //   console.log(val);
+  //
   // };
 
   const onCheckChange = (contactID) => {
