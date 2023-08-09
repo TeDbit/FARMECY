@@ -1,94 +1,50 @@
 import React, { useRef, useState } from "react";
 import "../Styles/Clients.css";
 import Contacts from "../Components/Contacts/Contacts";
+import {
+  markAll,
+  onCheckChange,
+  deleteItem,
+} from "../Components/wFunctions/function_s";
 
 const Clients = () => {
   const [select, setSelect] = useState(false);
   const [newC, setNewC] = useState(false);
 
-  // const selector = (mid) =>{
-
-  //   for (){
-
-  //     setCheck(!check);
-
-  //   }
-  // }
-
   const [contactData, setContactData] = useState([
     {
-      contactId: "0",
+      Id: "0",
       name: "Kwame Appiah",
       number: "0241323456",
       selected: false,
     },
     {
-      contactId: "1",
+      Id: "1",
       name: "Gabby Yu",
       number: "0594883995",
       selected: false,
     },
     {
-      contactId: "2",
+      Id: "2",
       name: "Sista Derby",
       number: "0203679262",
       selected: false,
     },
     {
-      contactId: "3",
+      Id: "3",
       name: "Nees Rock",
       number: "0537692901",
       selected: false,
     },
     {
-      contactId: "4",
+      Id: "4",
       name: "Archie Bald",
       number: "0502589020",
       selected: false,
     },
   ]);
 
-  // const checkElement = useRef();
-  // const logCheck = () => {
-  //   const val = checkElement.current.getAttribute("value");
-  //   console.log(val);
-  //
-  // };
-
-  const onCheckChange = (contactID) => {
-    const updateContact = contactData.map((contact) =>
-      contact.contactId === contactID
-        ? { ...contact, selected: !contact.selected }
-        : contact
-    );
-
-    setContactData(updateContact);
-    console.log(contactID);
-  };
-
-  const markAll = () => {
-    var markCount = 0;
-    contactData.forEach((contact) => {
-      if (contact.selected) {
-        markCount++;
-      }
-      return markCount;
-    });
-    console.log(markCount);
-
-    const mark_all = contactData.map((contact) =>
-      markCount !== contactData.length
-        ? { ...contact, selected: true }
-        : { ...contact, selected: false }
-    );
-    setContactData(mark_all);
-  };
-
-  const deleteContact = () => {
-    const upContactData = contactData.filter((contact) => !contact.selected);
-    setContactData(upContactData);
-  };
-
+  //loads Contacts template
   const loadContacts = () =>
     contactData.map((item, index) => (
       <div id="seperation">
@@ -100,17 +56,18 @@ const Clients = () => {
           }}
         >
           <input
-            // ref={checkElement}
-            // onClick={() => logCheck()}
             type="checkbox"
-            id="cbox"
             value={item.name}
-            checked={item.selected}
-            onChange={() => onCheckChange(item.contactId)}
+            checked = {item.selected}
+            onChange={() =>
+              onCheckChange(item.Id, contactData, setContactData)
+            }
           ></input>
         </div>
       </div>
     ));
+
+  //
 
   return (
     <div id="mainD">
@@ -145,7 +102,7 @@ const Clients = () => {
             Cancel
           </button>
           <button
-            onClick={() => markAll()}
+            onClick={() => markAll(contactData, setContactData)}
             style={{
               display: select ? "block" : "none",
             }}
@@ -153,7 +110,7 @@ const Clients = () => {
             Mark All
           </button>
           <button
-            onClick={() => deleteContact()}
+            onClick={() => deleteItem(contactData, setContactData)}
             style={{
               display: select ? "block" : "none",
             }}
