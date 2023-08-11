@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-html,body{
+html,
+body {
   min-height: 100dvh;
   /* overflow:auto; */
 }
@@ -11,8 +12,6 @@ html,body{
 
 body > * {
   font-family: "Inter", sans-serif;
-
-  
 }
 
 button {
@@ -22,35 +21,33 @@ button {
   justify-content: center;
   align-items: center;
   padding: 0px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   width: 129px;
   height: 48px;
-  border-color: #D0D5DD;
+  border-color: #d0d5dd;
   border-radius: 8px;
   background: white;
-  
+
   /* box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); */
 }
-label{
+label {
   font-size: 20px;
   color: #101828;
 }
 #allBody {
   /* min-height: 100dvh ; */
   height: fit-content;
-  display:flex;
+  display: flex;
   flex-direction: column;
   /* position:-ms-page; */
   /* background-color: #282c34; */
   /* padding-right: 2.5%;
   padding-left: 1%; */
-
 }
-
 
 #center {
   flex-grow: 0;
@@ -68,15 +65,14 @@ label{
 #main {
   display: flex;
   padding: 30px 2% 0% 5%;
-  width:100% ;
+  width: 100%;
   height: fit-content;
   /* overflow: scroll; */
   /* background-color:greenyellow; */
   justify-content: space-between;
-
 }
 
-#iconC{
+#iconC {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,35 +84,27 @@ label{
   border-radius: 15px;
 }
 
-#iconCb{
+#iconCb {
   display: none;
 }
 
-#iconC:hover{
+#iconC:hover {
   color: #609260;
   background-color: #eeeeee;
-
 }
 
-
-
-
-
 @media only screen and (max-width: 900px) {
-
-
   body {
     /* padding-left: 2%;
     padding-right: 2%; */
   }
-   
+
   #allBody {
     height: fit-content;
     /* position:-ms-page; */
     /* background-color: #282c34; */
     /* padding-right: 2.5%;
     padding-left: 1%; */
-  
   }
 
   #center {
@@ -136,7 +124,7 @@ label{
     /* background-color:greenyellow; */
   }
 
-  #iconCb{
+  #iconCb {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,14 +136,12 @@ label{
     border-radius: 15px;
     z-index: 1;
   }
-  
 
-  #iconCb:hover{
+  #iconCb:hover {
     color: #609260;
     background-color: #eeeeee;
     z-index: 1;
   }
-  
 
   button {
     display: flex;
@@ -164,27 +150,24 @@ label{
     justify-content: center;
     align-items: center;
     padding: 0px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     /* line-height: 22px; */
-    width: 72px;
-    height: 28px;
-    border-color: #D0D5DD;
+    width: 84px;
+    height: 36px;
+    border-color: #d0d5dd;
     border-radius: 8px;
     background: white;
     /* box-shadow: 0px 1px 2px rgba(16, 24, 40, 0#05); */
   }
 
-  #sidepCont{
+  #sidepCont {
     display: none;
   }
 
   @media only screen and (max-width: 600px) {
-
-    
-
     #allBody {
       height: fit-content;
       /* position:-ms-page; */
@@ -201,7 +184,6 @@ label{
       width: 100%;
       padding-top: 30px;
       padding-bottom: 20px;
-  
     }
   }
 }
@@ -251,4 +233,3 @@ label{
     transform: rotate(360deg);
   }
 }
-
