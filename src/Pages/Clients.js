@@ -10,6 +10,8 @@ import {
 const Clients = () => {
   const [select, setSelect] = useState(false);
   const [newC, setNewC] = useState(false);
+  const [newName, setName] = useState();
+  const [newNum, setNum] = useState();
 
   const [contactData, setContactData] = useState([
     {
@@ -44,28 +46,18 @@ const Clients = () => {
     },
   ]);
 
-  //loads Contacts template
-  const loadContacts = () =>
-    contactData.map((item, index) => (
-      <div id="seperation">
-        <Contacts name={item.name} number={item.number} />
-        <div
-          id="checkD"
-          style={{
-            display: !select ? "none" : "flex",
-          }}
-        >
-          <input
-            type="checkbox"
-            value={item.name}
-            checked = {item.selected}
-            onChange={() =>
-              onCheckChange(item.Id, contactData, setContactData)
-            }
-          ></input>
-        </div>
-      </div>
-    ));
+  const addContact = () => {
+    if (newName && newNum) {
+      const newContact = {
+        Id: contactData.length,
+        name: newName,
+        number: newNum,
+      };
+      setContactData([...contactData, newContact]);
+      setName("");
+      setNum("");
+    }
+  };
 
   //
 
@@ -126,11 +118,49 @@ const Clients = () => {
         }}
       >
         New Contact:
-        <input type="" placeholder="Enter Name"></input>
-        <input type="tel" placeholder="Enter Number*"></input>
-        <button onClick={() => setNewC(false)}>Save</button>
+        <input
+          type=""
+          placeholder="Enter Name"
+          id="name"
+          value={newName}
+          onChange={(e) => setName(e.target.value)}
+        ></input>
+        <input
+          type="tel"
+          placeholder="Enter Number*"
+          id="number"
+          value={newNum}
+          onChange={(e) => setNum(e.target.value)}
+        ></input>
+        <button
+          onClick={() => {
+            addContact();
+            setNewC(false);
+          }}
+        >
+          Save
+        </button>
       </div>
-      {loadContacts()}
+      {contactData.map((item, index) => (
+        <div id="seperation">
+          <Contacts name={item.name} number={item.number} />
+          <div
+            id="checkD"
+            style={{
+              display: !select ? "none" : "flex",
+            }}
+          >
+            <input
+              type="checkbox"
+              value={item.name}
+              checked={item.selected}
+              onChange={() =>
+                onCheckChange(item.Id, contactData, setContactData)
+              }
+            ></input>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
