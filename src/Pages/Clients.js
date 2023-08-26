@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../Styles/Clients.css";
 import Contacts from "../Components/Contacts/Contacts";
 import {
   markAll,
   onCheckChange,
   deleteItem,
+  searchItems,
 } from "../Components/wFunctions/function_s";
 
 const Clients = () => {
@@ -12,8 +13,8 @@ const Clients = () => {
   const [newC, setNewC] = useState(false);
   const [newName, setName] = useState();
   const [newNum, setNum] = useState();
-
-  const [contactData, setContactData] = useState([
+  const [sortAlpha, setSort] = useState("ascending");
+  const originalData = [
     {
       Id: "0",
       name: "Kwame Appiah",
@@ -44,7 +45,18 @@ const Clients = () => {
       number: "0502589020",
       selected: false,
     },
-  ]);
+  ];
+  const [contactData, setContactData] = useState(originalData);
+
+  const handleSort = () => {
+    const sortedData = [...contactData].sort((a, b) => {
+      if (sortAlpha === "ascending") {
+        return a.name.localeCompare(b.name);
+      }
+    });
+
+    setContactData(sortedData);
+  };
 
   const addContact = () => {
     if (newName && newNum) {
@@ -59,12 +71,21 @@ const Clients = () => {
     }
   };
 
+  useEffect(() => {
+    handleSort();
+  }, [contactData]);
+
   //
 
   return (
     <div id="mainD">
       <div id="headD">
         <div id="textH">Contacts</div>
+        <input
+          id="searchbar"
+          type="search"
+          onChange={() => searchItems(contactData, setContactData)}
+        ></input>
         <div id="buttonD">
           <button
             onClick={() => setSelect(true)}
