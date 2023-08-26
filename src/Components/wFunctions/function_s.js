@@ -30,3 +30,16 @@ export const deleteItem = (itemArray, setArray) => {
   const upContactData = itemArray.filter((item) => !item.selected);
   setArray(upContactData);
 };
+
+//searching
+export const searchItems = (itemArray, setArray) => {
+
+  let searchedItem = document.getElementById("searchbar").value;
+  searchedItem = searchedItem.toLowerCase();
+  console.log(searchedItem);
+
+  const searchedData = itemArray.filter((item) =>
+    item.name.toLowerCase().includes(searchedItem)
+  );
+  setArray(searchedData);
+};

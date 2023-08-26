@@ -38,6 +38,7 @@ const New = () => {
           <div id="dragdrop">
             <h2 id="textH2">Drop Here</h2>
             <FiUpload fontSize={"6rem"} />
+            {/* <input type="file" ></input> */}
             <p id="textP">Upload files (.csv, .xlsx)</p>
           </div>
 
@@ -48,8 +49,7 @@ const New = () => {
         </div>
       </div>
       <div id="lowerspace">
-        <button>Send</button>
-        {/* <input type="Submit" value="Send"></input> */}
+        <button type="submit">Send</button>
 
         <button>Draft</button>
       </div>
