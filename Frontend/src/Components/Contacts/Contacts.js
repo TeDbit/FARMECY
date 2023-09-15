@@ -1,38 +1,45 @@
-import React, { useState, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import "./Contacts.css";
 
 const Contacts = forwardRef((props, contactRef) => {
-  const [toBeEdited,setToBeEdited] = useState('')
-  const { setEdit,edit, setEditing,editing} = props;
+
+  const { setEdit, edit, setEditing, editing, toBeEdited, setToBeEdited } = props;
   const editClass = edit ? "edited" : "";
 
-  const handleClick = () => {
-  
+  const handleClick = (e) => {
+
+
     if (edit) {
       setEditing(true);
       console.log("I have been clicked");
-      const handleInputChange = (e) => {
-        
-      };
-      console.log(editing)
-      setEdit(false)
+      console.log(editing);
+      setEdit(false);
+      setToBeEdited(
+        {
+          _id: `${props.id}`,
+          editName: `${props.name}`,
+          editNumber: `${props.number}`,
+        }
+      );
+      console.log(toBeEdited)
+      window.scrollTo(0,0)
       
+     
     }
   };
 
 
   return (
-    <div
-      onClick={() => handleClick()}
-      ref={contactRef}
-      {...props}
-      id="contactOuterC"
-    >
-      <div id={`contactInnerC${editClass}`}>
-        <label>{props.name}</label>
-        <p id="numberC">{props.number}</p>
+    <>
+
+
+      <div onClick={handleClick} ref={contactRef} {...props} id="contactOuterC">
+        <div id={`contactInnerC${editClass}`}>
+          <label>{props.name}</label>
+          <p id="numberC">{props.number}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 });
 

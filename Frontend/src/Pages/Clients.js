@@ -13,8 +13,15 @@ const Clients = () => {
   const [newC, setNewC] = useState(false);
   const [newName, setName] = useState();
   const [newNum, setNum] = useState();
+    const [editedName, setEditedName] = useState();
+    const [editedNumber, setEditedNum] = useState();
   const [edit, setEdit] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [toBeEdited, setToBeEdited] = useState({
+    _id: "",
+    editName: "",
+    editNumber: "",
+  });
   const contactRef = React.createRef();
 
   const [sortAlpha, setSort] = useState("ascending");
@@ -55,8 +62,6 @@ const Clients = () => {
   const handleEdit = () => {
     console.log(edit);
     setEdit(true);
-    
-
   };
   const handleSort = () => {
     const sortedData = [...contactData].sort((a, b) => {
@@ -85,6 +90,14 @@ const Clients = () => {
     handleSort();
   }, []);
 
+  useEffect(() => {
+    document.getElementById("nameEdit").focus();
+  }, [toBeEdited]);
+
+    useEffect(() => {
+      document.getElementById("nameAdd").focus();
+    }, [newC]);
+
   //
 
   return (
@@ -109,7 +122,9 @@ const Clients = () => {
             Select
           </button>
           <button
-            onClick={() => setNewC(true)}
+            onClick={() => {
+              setNewC(true);
+            }}
             style={{
               display: !select && !newC && !edit && !editing ? "" : "none",
             }}
@@ -133,7 +148,7 @@ const Clients = () => {
               setEditing(false);
             }}
             style={{
-              display: select || newC || edit || editing? "" : "none",
+              display: select || newC || edit || editing ? "" : "none",
             }}
           >
             Cancel
@@ -159,21 +174,23 @@ const Clients = () => {
       <div
         id="newContactC"
         style={{
-          display: newC ? "" : "none",
+          visibility: newC ? "" : "hidden",
+          position: newC ? "" : "absolute",
+          height: newC ? "" : "0",
         }}
       >
         New Contact:
         <input
           type=""
           placeholder="Enter Name"
-          id="name"
+          id="nameAdd"
           value={newName}
           onChange={(e) => setName(e.target.value)}
         ></input>
         <input
           type="tel"
           placeholder="Enter Number*"
-          id="number"
+          id="numberAdd"
           value={newNum}
           onChange={(e) => setNum(e.target.value)}
         ></input>
@@ -186,6 +203,37 @@ const Clients = () => {
           Save
         </button>
       </div>
+      <div
+        id="newContactC"
+        style={{
+          visibility: editing ? "" : "hidden",
+          position: editing ? "" : "absolute",
+          height: editing ? "" : "0",
+        }}
+      >
+        Edit Contact:
+        <input
+          type=""
+          placeholder="Enter Name"
+          id="nameEdit"
+          defaultValue={()=>toBeEdited.editName}
+          onChange={(e) => setEditedName(e.target.value )}
+        ></input>
+        <input
+          type="tel"
+          placeholder="Enter Number*"
+          id="numberEdit"
+          defaultValue={toBeEdited.editNumber}
+          onChange={(e) => setEditedNum( e.target.value)}
+        ></input>
+        <button
+          onClick={() => {
+            setEditing(false);
+          }}
+        >
+          Save
+        </button>
+      </div>
       {contactData.map((item, index) => (
         <div id="seperation">
           <Contacts
@@ -193,9 +241,12 @@ const Clients = () => {
             setEdit={setEdit}
             editing={editing}
             ref={contactRef}
+            _id={item.Id}
             name={item.name}
             number={item.number}
             edit={edit}
+            toBeEdited={toBeEdited}
+            setToBeEdited={setToBeEdited}
           />
           <div
             id="checkD"
