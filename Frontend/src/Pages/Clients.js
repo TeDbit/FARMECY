@@ -13,8 +13,7 @@ const Clients = () => {
   const [newC, setNewC] = useState(false);
   const [newName, setName] = useState();
   const [newNum, setNum] = useState();
-    const [editedName, setEditedName] = useState();
-    const [editedNumber, setEditedNum] = useState();
+
   const [edit, setEdit] = useState(false);
   const [editing, setEditing] = useState(false);
   const [toBeEdited, setToBeEdited] = useState({
@@ -22,6 +21,8 @@ const Clients = () => {
     editName: "",
     editNumber: "",
   });
+      const [editedName, setEditedName] = useState(toBeEdited.editName);
+      const [editedNumber, setEditedNum] = useState(toBeEdited.editNumber);
   const contactRef = React.createRef();
 
   const [sortAlpha, setSort] = useState("ascending");
@@ -92,7 +93,11 @@ const Clients = () => {
 
   useEffect(() => {
     document.getElementById("nameEdit").focus();
+    document.getElementById("nameEdit").value=toBeEdited.editName;
+    document.getElementById("numberEdit").value=toBeEdited.editNumber;
+
   }, [toBeEdited]);
+  
 
     useEffect(() => {
       document.getElementById("nameAdd").focus();
@@ -216,14 +221,12 @@ const Clients = () => {
           type=""
           placeholder="Enter Name"
           id="nameEdit"
-          defaultValue={()=>toBeEdited.editName}
           onChange={(e) => setEditedName(e.target.value )}
         ></input>
         <input
           type="tel"
           placeholder="Enter Number*"
           id="numberEdit"
-          defaultValue={toBeEdited.editNumber}
           onChange={(e) => setEditedNum( e.target.value)}
         ></input>
         <button
@@ -241,12 +244,14 @@ const Clients = () => {
             setEdit={setEdit}
             editing={editing}
             ref={contactRef}
+            selected={item.selected}
             _id={item.Id}
             name={item.name}
             number={item.number}
             edit={edit}
             toBeEdited={toBeEdited}
             setToBeEdited={setToBeEdited}
+            select={select}
           />
           <div
             id="checkD"

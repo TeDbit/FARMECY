@@ -4,7 +4,7 @@ import "./Contacts.css";
 const Contacts = forwardRef((props, contactRef) => {
 
   const { setEdit, edit, setEditing, editing, toBeEdited, setToBeEdited } = props;
-  const editClass = edit ? "edited" : "";
+  const editClass = props.selected || edit ? "edited" : "";
 
   const handleClick = (e) => {
 
