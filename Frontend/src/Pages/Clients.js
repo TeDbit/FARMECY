@@ -21,8 +21,8 @@ const Clients = () => {
     editName: "",
     editNumber: "",
   });
-      const [editedName, setEditedName] = useState(toBeEdited.editName);
-      const [editedNumber, setEditedNum] = useState(toBeEdited.editNumber);
+  const [editedName, setEditedName] = useState(toBeEdited.editName);
+  const [editedNumber, setEditedNum] = useState(toBeEdited.editNumber);
   const contactRef = React.createRef();
 
   const [sortAlpha, setSort] = useState("ascending");
@@ -64,14 +64,14 @@ const Clients = () => {
     console.log(edit);
     setEdit(true);
   };
-  const handleSort = () => {
-    const sortedData = [...contactData].sort((a, b) => {
+  const handleSort = (data) => {
+    const sortedData = [...data].sort((a, b) => {
       if (sortAlpha === "ascending") {
         return a.name.localeCompare(b.name);
       }
     });
 
-    setContactData(sortedData);
+    return sortedData
   };
 
   const addContact = () => {
@@ -87,21 +87,17 @@ const Clients = () => {
     }
   };
 
-  useEffect(() => {
-    handleSort();
-  }, []);
+
 
   useEffect(() => {
     document.getElementById("nameEdit").focus();
-    document.getElementById("nameEdit").value=toBeEdited.editName;
-    document.getElementById("numberEdit").value=toBeEdited.editNumber;
-
+    document.getElementById("nameEdit").value = toBeEdited.editName;
+    document.getElementById("numberEdit").value = toBeEdited.editNumber;
   }, [toBeEdited]);
-  
 
-    useEffect(() => {
-      document.getElementById("nameAdd").focus();
-    }, [newC]);
+  useEffect(() => {
+    document.getElementById("nameAdd").focus();
+  }, [newC]);
 
   //
 
@@ -221,13 +217,13 @@ const Clients = () => {
           type=""
           placeholder="Enter Name"
           id="nameEdit"
-          onChange={(e) => setEditedName(e.target.value )}
+          onChange={(e) => setEditedName(e.target.value)}
         ></input>
         <input
           type="tel"
           placeholder="Enter Number*"
           id="numberEdit"
-          onChange={(e) => setEditedNum( e.target.value)}
+          onChange={(e) => setEditedNum(e.target.value)}
         ></input>
         <button
           onClick={() => {
@@ -237,7 +233,7 @@ const Clients = () => {
           Save
         </button>
       </div>
-      {contactData.map((item, index) => (
+      {handleSort(contactData).map((item, index) => (
         <div id="seperation">
           <Contacts
             setEditing={setEditing}
