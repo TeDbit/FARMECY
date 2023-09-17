@@ -71,7 +71,7 @@ const Clients = () => {
       }
     });
 
-    return sortedData
+    return sortedData;
   };
 
   const addContact = () => {
@@ -86,8 +86,6 @@ const Clients = () => {
       setNum("");
     }
   };
-
-
 
   useEffect(() => {
     document.getElementById("nameEdit").focus();
