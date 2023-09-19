@@ -8,24 +8,29 @@ export const onCheckChange = (itemID, itemArray, setArray) => {
 };
 
 //marking all
-export const markAll = (itemArray, setArray,n) => {
-  for(let i = 0; i < n;i++){
-      var markCount = 0;
-      itemArray.forEach((item) => {
-        if (item.selected) {
-          markCount++;
-        }
-        return markCount;
-      });
+export const markAll = (itemArray, setArray) => {
+    var markCount = 0;
+    itemArray.forEach((item) => {
+      if (item.selected) {
+        markCount++;
+      }
+      return markCount;
+    });
 
-      const mark_all = itemArray.map((item) =>
-        markCount !== itemArray.length
-          ? { ...item, selected: true }
-          : { ...item, selected: false }
-      );
-      setArray(mark_all);
-  }
+    const mark_all = itemArray.map((item) =>
+      markCount !== itemArray.length
+        ? { ...item, selected: true }
+        : { ...item, selected: false }
+    );
+    setArray(mark_all);
+};
 
+export const deselectAll = (itemArray) => {
+    
+    itemArray.map((item) =>
+    item.selected = false
+     
+    );
 };
 
 //deleting
@@ -36,7 +41,6 @@ export const deleteItem = (itemArray, setArray) => {
 
 //searching
 export const searchItems = (itemArray, setArray) => {
-
   let searchedItem = document.getElementById("searchbar").value;
   searchedItem = searchedItem.toLowerCase();
   console.log(searchedItem);

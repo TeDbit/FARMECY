@@ -1,5 +1,5 @@
 /* eslint-disable no-sequences */
-import React, { createRef, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/Clients.css";
 import Contacts from "../Components/Contacts/Contacts";
 import {
@@ -7,6 +7,7 @@ import {
   onCheckChange,
   deleteItem,
   searchItems,
+  deselectAll,
 } from "../Components/wFunctions/function_s";
 
 const Clients = () => {
@@ -22,11 +23,10 @@ const Clients = () => {
     editName: "",
     editNumber: "",
   });
-  const [editedName, setEditedName] = useState(toBeEdited.editName);
-  const [editedNumber, setEditedNum] = useState(toBeEdited.editNumber);
+  const [editedName, setEditedName] = useState("");
+  const [editedNumber, setEditedNum] = useState("");
   const contactRef = React.createRef();
 
-  const [sortAlpha, setSort] = useState("ascending");
   const originalData = [
     {
       _id: "0",
@@ -66,9 +66,7 @@ const Clients = () => {
   };
   const handleSort = (data) => {
     const sortedData = [...data].sort((a, b) => {
-      if (sortAlpha === "ascending") {
         return a.name.localeCompare(b.name);
-      }
     });
 
     return sortedData;
@@ -89,14 +87,13 @@ const Clients = () => {
 
   const editContact = () => {
     if (editedName || editedNumber) {
-      const editedContact = contactData.map((item) => {
+      contactData.map((item) => {
         if (item._id === toBeEdited._id) {
            item.name = editedName;
            item.number = editedNumber;
         }
         return [item.name,item.number]
       });
-      console.log(editedContact);
       setEditedName("");
       setEditedNum("");
     }
@@ -159,7 +156,7 @@ const Clients = () => {
               setNewC(false);
               setEdit(false);
               setEditing(false);
-              markAll(contactData, setContactData,2);
+              deselectAll(contactData);
             }}
             style={{
               display: select || newC || edit || editing ? "" : "none",
@@ -168,7 +165,7 @@ const Clients = () => {
             Cancel
           </button>
           <button
-            onClick={() => markAll(contactData, setContactData,1)}
+            onClick={() => markAll(contactData, setContactData)}
             style={{
               display: select ? "block" : "none",
             }}
@@ -241,9 +238,6 @@ const Clients = () => {
         <button
           onClick={() => {
             editContact();
-            console.log(toBeEdited._id)
-            console.log(editedName)
-            console.log(editedNumber)
             setEditing(false);
           }}
         >
@@ -253,8 +247,10 @@ const Clients = () => {
       {handleSort(contactData).map((item, index) => (
         <div id="seperation">
           <Contacts
-            setEditing={setEditing}
-            setEdit={setEdit}
+            set_edited_name = {setEditedName}
+            set_edited_num = {setEditedNum}
+            set_editing={setEditing}
+            set_edit={setEdit}
             editing={editing}
             ref={contactRef}
             selected={item.selected}
@@ -262,8 +258,8 @@ const Clients = () => {
             name={item.name}
             number={item.number}
             edit={edit}
-            toBeEdited={toBeEdited}
-            setToBeEdited={setToBeEdited}
+            to_be_edited={toBeEdited}
+            set_to_be_edited={setToBeEdited}
             select={select}
           />
           <div

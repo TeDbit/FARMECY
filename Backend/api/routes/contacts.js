@@ -1,13 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const Contact = require("../models/contacts");
-
+const Contact = require("../models/contacts.js");
 
 router.get("/", (req, res, next) => {
-  res.status(200).json({
-    message: "Handling GET requests to /contacts",
-  });
+  Contact.find()
+    .exec()
+    .then((doc) => {
+      console.log(doc);
+      res.status(200).json({
+        documents: doc,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
+    });
 });
 
 router.post("/", (req, res, next) => {
@@ -26,21 +35,20 @@ router.post("/", (req, res, next) => {
       });
     })
     .catch((err) => console.log(err));
-
-
 });
 
 router.get("/:contactId", (req, res, next) => {
   const id = req.params.contactId;
   Contact.findById(id)
-  .exec()
-  .then(doc => {
-    console.log(doc);
-    res.status(200).json(doc);
-  }).catch(err => {
-    console.log(err)
-    res.status(500).json({error: err})
-  });
+    .exec()
+    .then((doc) => {
+      console.log(doc);
+      res.status(200).json(doc);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
 });
 
 router.delete("/", (req, res, next) => {
@@ -60,6 +68,22 @@ router.delete("/", (req, res, next) => {
 
 router.patch("/:contactId", (req, res, next) => {
   const id = req.params.contactId;
+  Contact.update(
+    { _id: id },
+    {
+      $set: { name: `${req.body.editedName}`, number: `${req.body.editedNum}` },
+    }
+  )
+    .exec()
+    .then((result) => {
+      res.staus(200).json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        error: err,
+      });
+    });
 });
 
 module.exports = router;
