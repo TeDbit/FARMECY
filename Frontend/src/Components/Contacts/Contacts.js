@@ -11,17 +11,14 @@ const Contacts = forwardRef((props, contactRef) => {
 
     if (edit) {
       setEditing(true);
-      console.log("I have been clicked");
-      console.log(editing);
       setEdit(false);
       setToBeEdited(
         {
-          _id: `${props.id}`,
+          _id: `${props._id}`,
           editName: `${props.name}`,
           editNumber: `${props.number}`,
         }
       );
-      console.log(toBeEdited)
       window.scrollTo(0,0)
       
      

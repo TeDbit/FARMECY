@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import React, { createRef, useEffect, useRef, useState } from "react";
 import "../Styles/Clients.css";
 import Contacts from "../Components/Contacts/Contacts";
@@ -28,31 +29,31 @@ const Clients = () => {
   const [sortAlpha, setSort] = useState("ascending");
   const originalData = [
     {
-      Id: "0",
+      _id: "0",
       name: "Kwame Appiah",
       number: "0241323456",
       selected: false,
     },
     {
-      Id: "1",
+      _id: "1",
       name: "Gabby Yu",
       number: "0594883995",
       selected: false,
     },
     {
-      Id: "2",
+      _id: "2",
       name: "Sista Derby",
       number: "0203679262",
       selected: false,
     },
     {
-      Id: "3",
+      _id: "3",
       name: "Nees Rock",
       number: "0537692901",
       selected: false,
     },
     {
-      Id: "4",
+      _id: "4",
       name: "Archie Bald",
       number: "0502589020",
       selected: false,
@@ -61,7 +62,6 @@ const Clients = () => {
   const [contactData, setContactData] = useState(originalData);
 
   const handleEdit = () => {
-    console.log(edit);
     setEdit(true);
   };
   const handleSort = (data) => {
@@ -77,13 +77,28 @@ const Clients = () => {
   const addContact = () => {
     if (newName && newNum) {
       const newContact = {
-        Id: contactData.length,
+        _id: contactData.length,
         name: newName,
         number: newNum,
       };
       setContactData([...contactData, newContact]);
       setName("");
       setNum("");
+    }
+  };
+
+  const editContact = () => {
+    if (editedName || editedNumber) {
+      const editedContact = contactData.map((item) => {
+        if (item._id === toBeEdited._id) {
+           item.name = editedName;
+           item.number = editedNumber;
+        }
+        return [item.name,item.number]
+      });
+      console.log(editedContact);
+      setEditedName("");
+      setEditedNum("");
     }
   };
 
@@ -143,8 +158,8 @@ const Clients = () => {
               setSelect(false);
               setNewC(false);
               setEdit(false);
-              console.log(edit);
               setEditing(false);
+              markAll(contactData, setContactData,2);
             }}
             style={{
               display: select || newC || edit || editing ? "" : "none",
@@ -153,7 +168,7 @@ const Clients = () => {
             Cancel
           </button>
           <button
-            onClick={() => markAll(contactData, setContactData)}
+            onClick={() => markAll(contactData, setContactData,1)}
             style={{
               display: select ? "block" : "none",
             }}
@@ -195,7 +210,7 @@ const Clients = () => {
         ></input>
         <button
           onClick={() => {
-            addContact();
+            addContact()
             setNewC(false);
           }}
         >
@@ -225,6 +240,10 @@ const Clients = () => {
         ></input>
         <button
           onClick={() => {
+            editContact();
+            console.log(toBeEdited._id)
+            console.log(editedName)
+            console.log(editedNumber)
             setEditing(false);
           }}
         >
@@ -239,7 +258,7 @@ const Clients = () => {
             editing={editing}
             ref={contactRef}
             selected={item.selected}
-            _id={item.Id}
+            _id={item._id}
             name={item.name}
             number={item.number}
             edit={edit}
@@ -258,7 +277,7 @@ const Clients = () => {
               value={item.name}
               checked={item.selected}
               onChange={() =>
-                onCheckChange(item.Id, contactData, setContactData)
+                onCheckChange(item._id, contactData, setContactData)
               }
             ></input>
           </div>
