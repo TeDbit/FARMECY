@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "mongodb+srv://theodelvis:theodelvis@farmecy.fupv3bx.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://theodelvis:"+process.env.mongopass+"@farmecy.fupv3bx.mongodb.net/?retryWrites=true&w=majority",
 
   )
   .then(() => {

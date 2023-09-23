@@ -66,18 +66,18 @@ router.delete("/", (req, res, next) => {
     });
 });
 
-router.patch("/:contactId", (req, res, next) => {
-  const id = req.params.contactId;
-  Contact.update(
+router.patch("/:contactId", async (req, res, next) => {
+  const id = await req.params.contactId;
+  const updateContacts = Contact.findOneAndUpdate(
     { _id: id },
     {
-      $set: { name: `${req.body.editedName}`, number: `${req.body.editedNum}` },
-    }
+      name: req.body.editedName,
+      number: req.body.editedNum,
+    },
+    { returnNewDocument: true }
   )
     .exec()
-    .then((result) => {
-      res.staus(200).json(result);
-    })
+    .then((result) => res.status(200).json(result))
     .catch((err) => {
       console.log(err);
       res.status(500).json({

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+const twilio = require("twilio");
 const Message = require("../models/messages");
 
 router.get("/", (req, res, next) => {
@@ -17,8 +18,18 @@ router.get("/", (req, res, next) => {
       });
     });
 });
+const sendSMS = () => {
+  const client = new twilio(process.env.twilioSID, process.env.AUTH_Token);
+  return client.messages
+    .create({
+      body: "hey there",
+      from: "+1 7855092918",
+      to: process.env.phoneNumber,
+    })
+    .then((output) => console.log(output).catch((err) => console.log(err)));
+};
 
-router.post("/", (req, res, next) => {
+router.post("/", async (req, res, next) => {
   const message = new Message({
     _id: new mongoose.Types.ObjectId(),
     subject: req.body.subject,
@@ -28,6 +39,7 @@ router.post("/", (req, res, next) => {
   message
     .save()
     .then((result) => {
+      sendSMS();
       console.log(result);
       res.status(200).json({
         message: "Handling POST requests to /messages",
@@ -59,11 +71,10 @@ router.get("/:messageId", (req, res, next) => {
 
 router.delete("/", (req, res, next) => {
   const id = req.body.toDelete;
-  Message.deleteMany({ _id:{ $in : id}})
+  Message.deleteMany({ _id: { $in: id } })
     .exec()
     .then((result) => {
-      res.status(200).json(result)
-   
+      res.status(200).json(result);
     })
     .catch((err) => {
       console.log(err);

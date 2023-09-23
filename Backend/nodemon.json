@@ -1,5 +1,8 @@
 {
-    "env": {
-        "mongopass": "theodelvis"
-    }
+  "env": {
+    "mongopass": "theodelvis",
+    "twilioSID": "AC2f0f4adb80a64b5a90dd8fdde2dc1798",
+    "AUTH_Token": "ea51af2f8aaf34309f515c69f7b0f8bd",
+    "phoneNumber":"0209296236"
+  }
 }
